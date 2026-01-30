@@ -557,14 +557,19 @@
     .section {
       position: relative;
       padding: var(--space-3xl) var(--space-lg);
+      margin-bottom: 0;
     }
     
     .section-dark {
       background: var(--obsidian);
+      border-top: 1px solid var(--white-08);
+      border-bottom: 1px solid var(--white-08);
     }
     
     .section-gradient {
       background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 50%, var(--void) 100%);
+      border-top: 1px solid var(--white-08);
+      border-bottom: 1px solid var(--white-08);
     }
     
     .container {
@@ -609,12 +614,9 @@
     
     .section-title em {
       font-style: italic;
-      background: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-400) 50%, var(--copper-500) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--gold-600);
+      text-shadow: 0 2px 8px rgba(166, 139, 31, 0.3), 0 0 2px rgba(166, 139, 31, 0.5);
       position: relative;
-      filter: drop-shadow(0 2px 4px rgba(201, 162, 39, 0.3));
     }
     
     /* ============================================
@@ -1129,14 +1131,19 @@
       transform: scaleY(1);
     }
     
-    .state-flag {
-      width: 24px;
-      height: 18px;
-      border-radius: 2px;
-      object-fit: cover;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    .state-shape {
+      width: 32px;
+      height: 32px;
       flex-shrink: 0;
-      border: 1px solid var(--white-08);
+      opacity: 0.85;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(166, 139, 31, 0.3)) brightness(0) saturate(100%) invert(27%) sepia(95%) saturate(1352%) hue-rotate(28deg) brightness(95%) contrast(88%);
+    }
+    
+    .state-item:hover .state-shape {
+      opacity: 1;
+      transform: scale(1.15);
+      filter: drop-shadow(0 3px 6px rgba(166, 139, 31, 0.4)) brightness(0) saturate(100%) invert(27%) sepia(95%) saturate(1352%) hue-rotate(28deg) brightness(105%) contrast(95%);
     }
     
     .state-name-wrapper {
@@ -1163,17 +1170,22 @@
     .banner-performance {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-lg);
+      gap: var(--space-xl);
       margin-top: var(--space-xl);
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .banner-card {
       background: linear-gradient(180deg, var(--smoke) 0%, var(--charcoal) 100%);
-      border: 1px solid var(--white-08);
-      border-radius: 2px;
+      border: 1px solid var(--white-12);
+      border-radius: 12px;
       padding: var(--space-xl);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
     
     .banner-card::before {
@@ -1182,7 +1194,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 2px;
+      height: 3px;
       background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
       opacity: 0;
       transition: opacity 0.4s ease;
@@ -1193,9 +1205,9 @@
     }
     
     .banner-card:hover {
-      border-color: var(--gold-700);
+      border-color: var(--gold-600);
       transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15), 0 0 24px rgba(201, 162, 39, 0.1);
     }
     
     .banner-label {
@@ -1299,22 +1311,19 @@
       font-family: var(--font-display);
       font-size: 3.5rem;
       font-weight: 600;
-      background: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-400) 50%, var(--copper-500) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--gold-600);
       line-height: 1;
       margin-bottom: var(--space-md);
       position: relative;
       display: inline-block;
       letter-spacing: -0.02em;
-      filter: drop-shadow(0 2px 8px rgba(201, 162, 39, 0.3));
+      text-shadow: 0 2px 12px rgba(166, 139, 31, 0.4), 0 0 4px rgba(166, 139, 31, 0.6);
       animation: numberGlow 4s ease-in-out infinite;
     }
     
     @keyframes numberGlow {
-      0%, 100% { filter: drop-shadow(0 2px 8px rgba(201, 162, 39, 0.3)); }
-      50% { filter: drop-shadow(0 4px 16px rgba(201, 162, 39, 0.5)); }
+      0%, 100% { text-shadow: 0 2px 12px rgba(166, 139, 31, 0.4), 0 0 4px rgba(166, 139, 31, 0.6); }
+      50% { text-shadow: 0 4px 20px rgba(166, 139, 31, 0.6), 0 0 8px rgba(166, 139, 31, 0.8); }
     }
     
     .metric-value::after {
@@ -2078,140 +2087,140 @@
         <div class="us-states-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md);">
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-ca.png" alt="California" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/ca.svg" alt="California" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">California</span>
             </div>
             <span class="state-share">91,140 (15.2%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-fl.png" alt="Florida" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/fl.svg" alt="Florida" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Florida</span>
             </div>
             <span class="state-share">59,340 (9.9%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-ny.png" alt="New York" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/ny.svg" alt="New York" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">New York</span>
             </div>
             <span class="state-share">45,120 (7.5%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-tx.png" alt="Texas" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/tx.svg" alt="Texas" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Texas</span>
             </div>
             <span class="state-share">42,420 (7.1%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-il.png" alt="Illinois" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/il.svg" alt="Illinois" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Illinois</span>
             </div>
             <span class="state-share">21,240 (3.5%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-nj.png" alt="New Jersey" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/nj.svg" alt="New Jersey" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">New Jersey</span>
             </div>
             <span class="state-share">20,160 (3.4%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-pa.png" alt="Pennsylvania" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/pa.svg" alt="Pennsylvania" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Pennsylvania</span>
             </div>
             <span class="state-share">19,080 (3.2%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-ga.png" alt="Georgia" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/ga.svg" alt="Georgia" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Georgia</span>
             </div>
             <span class="state-share">16,980 (2.8%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-va.png" alt="Virginia" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/va.svg" alt="Virginia" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Virginia</span>
             </div>
             <span class="state-share">14,400 (2.4%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-nc.png" alt="North Carolina" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/nc.svg" alt="North Carolina" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">North Carolina</span>
             </div>
             <span class="state-share">13,140 (2.2%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-mi.png" alt="Michigan" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/mi.svg" alt="Michigan" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Michigan</span>
             </div>
             <span class="state-share">11,760 (2.0%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-oh.png" alt="Ohio" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/oh.svg" alt="Ohio" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Ohio</span>
             </div>
             <span class="state-share">11,160 (1.9%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-ma.png" alt="Massachusetts" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/ma.svg" alt="Massachusetts" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Massachusetts</span>
             </div>
             <span class="state-share">9,960 (1.7%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-md.png" alt="Maryland" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/md.svg" alt="Maryland" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Maryland</span>
             </div>
             <span class="state-share">9,600 (1.6%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-az.png" alt="Arizona" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/az.svg" alt="Arizona" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Arizona</span>
             </div>
             <span class="state-share">9,300 (1.6%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-wa.png" alt="Washington" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/wa.svg" alt="Washington" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Washington</span>
             </div>
             <span class="state-share">9,180 (1.5%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-co.png" alt="Colorado" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/co.svg" alt="Colorado" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Colorado</span>
             </div>
             <span class="state-share">8,760 (1.5%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-nv.png" alt="Nevada" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/nv.svg" alt="Nevada" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Nevada</span>
             </div>
             <span class="state-share">8,400 (1.4%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-ct.png" alt="Connecticut" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/ct.svg" alt="Connecticut" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Connecticut</span>
             </div>
             <span class="state-share">7,440 (1.2%)</span>
           </div>
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://flagcdn.com/w40/us-tn.png" alt="Tennessee" class="state-flag">
+              <img src="https://simplemaps.com/static/svg/us/tn.svg" alt="Tennessee" class="state-shape" onerror="this.style.display='none'">
               <span class="state-name">Tennessee</span>
             </div>
             <span class="state-share">6,960 (1.2%)</span>
@@ -2226,12 +2235,14 @@
   </section>
   
       <!-- Banner Performance Section -->
-      <div class="section-header" style="margin-top: var(--space-3xl); margin-bottom: var(--space-xl);">
-        <div class="section-eyebrow">Banner Performance</div>
-        <h2 class="section-title">Digital <em>Banner</em> Effectiveness</h2>
-      </div>
-      
-      <div class="banner-performance">
+      <div style="margin-top: var(--space-3xl); padding-top: var(--space-3xl); border-top: 1px solid var(--white-12);">
+        <div class="section-header" style="margin-bottom: var(--space-xl);">
+          <div class="section-eyebrow">Banner Performance</div>
+          <h2 class="section-title">Digital <em>Banner</em> Effectiveness</h2>
+        </div>
+        
+        <div style="max-width: 1000px; margin: 0 auto;">
+          <div class="banner-performance">
         <div class="banner-card">
           <div class="banner-label">Homepage Placements</div>
           <div class="banner-metric">
@@ -2255,8 +2266,9 @@
         </div>
       </div>
       
-      <div class="geo-note" style="margin-top: var(--space-lg);">
-        <strong>Performance Metrics:</strong> <span style="color: var(--gold-400);">[Data needed]</span> Please provide typical CTR benchmarks and average click volumes for both homepage and run-of-site banner placements. This data will help Javier understand the actual click performance beyond impressions.
+      <div class="geo-note" style="margin-top: var(--space-xl); max-width: 1000px; margin-left: auto; margin-right: auto;">
+        <strong>Performance Metrics:</strong> <span style="color: var(--gold-600);">[Data needed]</span> Please provide typical CTR benchmarks and average click volumes for both homepage and run-of-site banner placements. This data will help Javier understand the actual click performance beyond impressions.
+      </div>
       </div>
     </div>
   </section>
