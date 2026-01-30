@@ -1106,39 +1106,33 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: var(--space-md);
-      background: linear-gradient(180deg, var(--smoke) 0%, var(--charcoal) 100%);
-      border: 1px solid var(--white-12);
-      border-radius: 8px;
+      padding: var(--space-md) 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--white-08);
       font-size: 0.85rem;
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
       gap: var(--space-sm);
       position: relative;
-      overflow: hidden;
     }
     
-    .state-item::before {
+    .state-item::after {
       content: '';
       position: absolute;
+      bottom: 0;
       left: 0;
-      top: 0;
-      height: 100%;
-      width: 3px;
-      background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
-      transform: scaleY(0);
-      transition: transform 0.4s ease;
+      width: 0;
+      height: 2px;
+      background: var(--cigar-accent);
+      transition: width 0.3s ease;
     }
     
     .state-item:hover {
-      border-color: var(--white-15);
-      background: var(--ash);
-      transform: translateY(-4px) translateX(4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      border-bottom-color: var(--cigar-accent);
     }
     
-    .state-item:hover::before {
-      transform: scaleY(1);
+    .state-item:hover::after {
+      width: 40px;
     }
     
     .state-shape {
