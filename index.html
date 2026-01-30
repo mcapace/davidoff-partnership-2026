@@ -538,12 +538,12 @@
     .bento-card {
       background: linear-gradient(180deg, var(--smoke) 0%, var(--charcoal) 100%);
       border: 1px solid var(--white-12);
-      border-radius: 4px;
-      padding: var(--space-xl);
+      border-radius: 6px;
+      padding: var(--space-2xl);
       position: relative;
       overflow: hidden;
       transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(201, 162, 39, 0.05);
     }
     
     .bento-card::before {
@@ -556,9 +556,9 @@
     }
     
     .bento-card:hover {
-      border-color: var(--gold-700);
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(201, 162, 39, 0.2);
+      border-color: var(--gold-600);
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 24px rgba(201, 162, 39, 0.15), 0 0 0 1px rgba(201, 162, 39, 0.1);
     }
     
     .bento-card:hover::before {
@@ -848,11 +848,17 @@
     
     .geo-row-detailed {
       display: grid;
-      grid-template-columns: 140px 80px 100px 1fr;
+      grid-template-columns: 140px 80px 120px 1fr;
       align-items: center;
       gap: var(--space-md);
-      padding: var(--space-sm) 0;
+      padding: var(--space-md) 0;
       border-bottom: 1px solid var(--white-08);
+      transition: all 0.3s ease;
+    }
+    
+    .geo-row-detailed:hover {
+      background: rgba(201, 162, 39, 0.03);
+      padding-left: var(--space-sm);
     }
     
     .geo-row-detailed:last-child {
@@ -874,17 +880,12 @@
     }
     
     .geo-visits {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--white-50);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gold-500);
       text-align: right;
-    }
-    
-    .geo-uniques {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--white-30);
-      text-align: right;
+      font-family: var(--font-display);
+      letter-spacing: 0.02em;
     }
     
     .geo-bar-track {
@@ -956,11 +957,11 @@
     
     .geo-table-header {
       display: grid;
-      grid-template-columns: 140px 80px 100px 1fr;
+      grid-template-columns: 140px 80px 120px 1fr;
       gap: var(--space-md);
-      padding: var(--space-sm) 0;
-      border-bottom: 1px solid var(--gold-700);
-      margin-bottom: var(--space-sm);
+      padding: var(--space-md) 0;
+      border-bottom: 2px solid var(--gold-600);
+      margin-bottom: var(--space-md);
     }
     
     .geo-table-header span {
@@ -1104,13 +1105,14 @@
     
     .metric-card {
       background: linear-gradient(180deg, var(--smoke) 0%, var(--charcoal) 100%);
-      border: 1px solid var(--white-08);
-      border-radius: 2px;
-      padding: var(--space-xl);
+      border: 1px solid var(--white-12);
+      border-radius: 6px;
+      padding: var(--space-2xl);
       text-align: center;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s ease;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(201, 162, 39, 0.05);
     }
     
     .metric-card::before {
@@ -1137,13 +1139,15 @@
     
     .metric-value {
       font-family: var(--font-display);
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 600;
-      color: var(--gold-400);
+      color: var(--gold-500);
       line-height: 1;
-      margin-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
       position: relative;
       display: inline-block;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 8px rgba(201, 162, 39, 0.2);
     }
     
     .metric-value::after {
@@ -1184,11 +1188,12 @@
     }
     
     .metric-label {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--white-50);
+      color: var(--white-70);
+      line-height: 1.4;
     }
     
     /* ============================================
@@ -1445,8 +1450,8 @@
       .bento-medium { grid-column: span 12; }
       .bento-small { grid-column: span 6; }
       .geo-row { grid-template-columns: 100px 60px 1fr; }
-      .geo-row-detailed { grid-template-columns: 100px 70px 90px 1fr; font-size: 0.8rem; }
-      .geo-table-header { grid-template-columns: 100px 70px 90px 1fr; }
+      .geo-row-detailed { grid-template-columns: 100px 70px 110px 1fr; font-size: 0.8rem; }
+      .geo-table-header { grid-template-columns: 100px 70px 110px 1fr; }
       .us-states-grid { grid-template-columns: repeat(2, 1fr); }
       .banner-performance { grid-template-columns: 1fr; }
       .bento-featured[style*="grid-column"] > div[style*="grid-template-columns"] {
@@ -1723,7 +1728,7 @@
             <span>Country</span>
             <span>Share</span>
             <span>Monthly Visits</span>
-            <span>Unique Visitors</span>
+            <span></span>
           </div>
           
           <div class="geo-row-detailed">
@@ -1731,7 +1736,6 @@
             <span class="geo-percent">67.4%</span>
             <div>
               <div class="geo-visits">404,400</div>
-              <div class="geo-uniques">209,000</div>
             </div>
             <div class="geo-bar-track">
               <div class="geo-bar-fill" style="--target-width: 100%; width: 100%"></div>
@@ -1742,7 +1746,6 @@
             <span class="geo-percent">1.1%</span>
             <div>
               <div class="geo-visits">6,600</div>
-              <div class="geo-uniques">3,400</div>
             </div>
             <div class="geo-bar-track">
               <div class="geo-bar-fill" style="--target-width: 1.6%; width: 1.6%"></div>
@@ -1753,7 +1756,6 @@
             <span class="geo-percent">1.6%</span>
             <div>
               <div class="geo-visits">9,600</div>
-              <div class="geo-uniques">5,000</div>
             </div>
             <div class="geo-bar-track">
               <div class="geo-bar-fill" style="--target-width: 2.4%; width: 2.4%"></div>
@@ -1764,7 +1766,6 @@
             <span class="geo-percent">0.5%</span>
             <div>
               <div class="geo-visits">3,000</div>
-              <div class="geo-uniques">1,600</div>
             </div>
             <div class="geo-bar-track">
               <div class="geo-bar-fill" style="--target-width: 0.7%; width: 0.7%"></div>
@@ -1775,7 +1776,6 @@
             <span class="geo-percent">29.4%</span>
             <div>
               <div class="geo-visits">176,400</div>
-              <div class="geo-uniques">91,000</div>
             </div>
             <div class="geo-bar-track">
               <div class="geo-bar-fill" style="--target-width: 43.6%; width: 43.6%"></div>
@@ -1783,7 +1783,7 @@
           </div>
           
           <div class="geo-note">
-            <strong>Monthly Traffic Base:</strong> 600,000 monthly visits | 310,000 unique monthly visitors (January 2026 data, Google Analytics)
+            <strong>Monthly Traffic Base:</strong> 600,000 monthly visits (January 2026 data, Google Analytics)
           </div>
           
           <div class="geo-note" style="margin-top: var(--space-md);">
@@ -1905,8 +1905,8 @@
           <div class="metric-label">Page Views / Month</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value">310K</div>
-          <div class="metric-label">Unique Visitors</div>
+          <div class="metric-value">600K</div>
+          <div class="metric-label">Monthly Visits</div>
         </div>
         <div class="metric-card">
           <div class="metric-value">3.24</div>
