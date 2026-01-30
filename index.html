@@ -426,8 +426,8 @@
     .hero-scroll {
       position: absolute;
       bottom: var(--space-xl);
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -435,7 +435,6 @@
       gap: var(--space-sm);
       opacity: 0;
       animation: fadeUp 1s ease-out 1.2s forwards;
-      width: 100%;
       text-align: center;
     }
     
@@ -446,8 +445,8 @@
       color: var(--on-dark-70);
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
       text-align: center;
-      display: block;
-      width: 100%;
+      display: inline-block;
+      margin: 0 auto;
     }
     
     .hero-scroll-line {
