@@ -1148,15 +1148,15 @@
       width: 40px;
       height: 40px;
       flex-shrink: 0;
-      opacity: 0.8;
+      opacity: 1;
       transition: all 0.3s ease;
-      filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(5000%) hue-rotate(10deg) brightness(0.3) contrast(1.2);
+      filter: brightness(0) saturate(100%) invert(8%) sepia(95%) saturate(5000%) hue-rotate(5deg) brightness(0.25) contrast(1.5);
     }
     
     .state-item:hover .state-shape {
       opacity: 1;
       transform: scale(1.1);
-      filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(5000%) hue-rotate(10deg) brightness(0.4) contrast(1.3);
+      filter: brightness(0) saturate(100%) invert(8%) sepia(95%) saturate(5000%) hue-rotate(5deg) brightness(0.35) contrast(1.6);
     }
     
     .state-name-wrapper {
@@ -2168,7 +2168,7 @@
         <div class="us-states-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md);">
           <div class="state-item">
             <div class="state-name-wrapper">
-              <img src="https://simplemaps.com/static/svg/us/ca.svg" alt="California" class="state-shape" onerror="this.style.display='none'">
+              <img src="https://simplemaps.com/static/svg/us/ca.svg" alt="California" class="state-shape" style="fill: var(--cigar-accent);" onerror="this.style.display='none'">
               <span class="state-name">California</span>
             </div>
             <span class="state-share">91,140 (15.2%)</span>
