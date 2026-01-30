@@ -630,37 +630,47 @@
     .bento-card {
       background: linear-gradient(180deg, var(--smoke) 0%, var(--charcoal) 100%);
       border: 1px solid var(--white-12);
-      border-radius: 6px;
+      border-radius: 12px;
       padding: var(--space-2xl);
       position: relative;
       overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(201, 162, 39, 0.05);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(201, 162, 39, 0.08);
+      transform-style: preserve-3d;
+      will-change: transform, box-shadow;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
     }
     
     .bento-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, var(--white-04) 0%, transparent 50%);
+      background: linear-gradient(135deg, rgba(201, 162, 39, 0.05) 0%, transparent 50%);
       opacity: 0;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+    
+    .bento-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201, 162, 39, 0.03) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
     }
     
     .bento-card:hover {
       border-color: var(--gold-600);
-      transform: translateY(-6px) scale(1.01);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 24px rgba(201, 162, 39, 0.15), 0 0 0 1px rgba(201, 162, 39, 0.1);
+      transform: translateY(-10px) scale(1.02) rotateX(1deg);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18), 0 0 32px rgba(201, 162, 39, 0.2), 0 0 0 1px rgba(201, 162, 39, 0.15);
     }
     
-    .bento-card:hover::before {
+    .bento-card:hover::before,
+    .bento-card:hover::after {
       opacity: 1;
-    }
-    
-    /* Stagger animation for bento cards */
-    .bento-card {
-      opacity: 0;
-      animation: fadeInUp 0.8s ease-out forwards;
     }
     
     .bento-card:nth-child(1) { animation-delay: 0.1s; }
