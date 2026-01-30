@@ -855,14 +855,6 @@
       justify-content: center;
     }
     
-    .geo-globe::before {
-      content: '';
-      position: absolute;
-      inset: 15%;
-      border-radius: 50%;
-      border: 1px solid var(--white-08);
-    }
-    
     .geo-chart {
       position: relative;
       width: 100%;
@@ -872,25 +864,24 @@
       justify-content: center;
     }
     
-    .geo-chart-segment {
+    .geo-chart-ring {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      clip-path: polygon(50% 50%, 50% 0%, var(--end-x) var(--end-y), 50% 50%);
       background: conic-gradient(
-        from 0deg,
+        from -90deg,
         var(--accent-primary) 0deg 242.64deg,
-        var(--accent-secondary) 242.64deg 248.4deg,
-        var(--accent-tertiary) 248.4deg 252deg,
-        var(--white-15) 252deg 360deg
+        var(--accent-secondary) 242.64deg 360deg
       );
+      mask: radial-gradient(circle at center, transparent 40%, black 40%);
+      -webkit-mask: radial-gradient(circle at center, transparent 40%, black 40%);
     }
     
     .geo-chart-center {
       position: absolute;
-      width: 60%;
-      height: 60%;
+      width: 40%;
+      height: 40%;
       border-radius: 50%;
       background: var(--void);
       border: 2px solid var(--white-12);
@@ -903,35 +894,69 @@
     
     .geo-chart-center-value {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       font-weight: 700;
       color: var(--white);
       line-height: 1;
     }
     
     .geo-chart-center-label {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--white-50);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-top: var(--space-xs);
+      text-align: center;
+    }
+    
+    .geo-legend {
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xl);
+      font-size: 0.75rem;
+    }
+    
+    .geo-legend-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      color: var(--white-70);
+    }
+    
+    .geo-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    
+    .geo-legend-dot.us {
+      background: var(--accent-primary);
+    }
+    
+    .geo-legend-dot.intl {
+      background: var(--accent-secondary);
     }
     
     .geo-us-highlight {
       position: absolute;
-      top: 25%;
-      left: 15%;
-      width: 30%;
-      height: 25%;
-      background: radial-gradient(ellipse, var(--accent-primary) 0%, transparent 70%);
-      opacity: 0.3;
+      top: 20%;
+      left: 10%;
+      width: 35%;
+      height: 30%;
+      background: radial-gradient(ellipse, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+      opacity: 0.5;
       animation: pulseGlow 3s ease-in-out infinite;
       border-radius: 50%;
+      pointer-events: none;
     }
     
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.05); }
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
     }
     
     .geo-data {
@@ -2000,13 +2025,23 @@
         <div class="geo-visual">
           <div class="geo-globe">
             <div class="geo-chart">
-              <div class="geo-chart-segment"></div>
+              <div class="geo-chart-ring"></div>
               <div class="geo-chart-center">
                 <div class="geo-chart-center-value">67.4%</div>
-                <div class="geo-chart-center-label">U.S. Traffic</div>
+                <div class="geo-chart-center-label">U.S. Market</div>
               </div>
             </div>
             <div class="geo-us-highlight"></div>
+            <div class="geo-legend">
+              <div class="geo-legend-item">
+                <div class="geo-legend-dot us"></div>
+                <span>United States</span>
+              </div>
+              <div class="geo-legend-item">
+                <div class="geo-legend-dot intl"></div>
+                <span>International</span>
+              </div>
+            </div>
           </div>
         </div>
         
