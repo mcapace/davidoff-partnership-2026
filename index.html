@@ -999,6 +999,7 @@
       font-size: 0.85rem;
       transition: all 0.3s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      gap: var(--space-sm);
     }
     
     .state-item:hover {
@@ -1006,6 +1007,23 @@
       background: linear-gradient(135deg, var(--smoke) 0%, rgba(201, 162, 39, 0.08) 100%);
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .state-flag {
+      width: 24px;
+      height: 18px;
+      border-radius: 2px;
+      object-fit: cover;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+      border: 1px solid var(--white-08);
+    }
+    
+    .state-name-wrapper {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex: 1;
     }
     
     .state-name {
@@ -1018,6 +1036,7 @@
       color: var(--gold-500);
       font-weight: 600;
       font-size: 0.9rem;
+      white-space: nowrap;
     }
     
     /* Banner Performance Section */
@@ -1883,83 +1902,143 @@
         
         <div class="us-states-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md);">
           <div class="state-item">
-            <span class="state-name">California</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-ca.png" alt="California" class="state-flag">
+              <span class="state-name">California</span>
+            </div>
             <span class="state-share">91,140 (15.2%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Florida</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-fl.png" alt="Florida" class="state-flag">
+              <span class="state-name">Florida</span>
+            </div>
             <span class="state-share">59,340 (9.9%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">New York</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-ny.png" alt="New York" class="state-flag">
+              <span class="state-name">New York</span>
+            </div>
             <span class="state-share">45,120 (7.5%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Texas</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-tx.png" alt="Texas" class="state-flag">
+              <span class="state-name">Texas</span>
+            </div>
             <span class="state-share">42,420 (7.1%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Illinois</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-il.png" alt="Illinois" class="state-flag">
+              <span class="state-name">Illinois</span>
+            </div>
             <span class="state-share">21,240 (3.5%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">New Jersey</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-nj.png" alt="New Jersey" class="state-flag">
+              <span class="state-name">New Jersey</span>
+            </div>
             <span class="state-share">20,160 (3.4%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Pennsylvania</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-pa.png" alt="Pennsylvania" class="state-flag">
+              <span class="state-name">Pennsylvania</span>
+            </div>
             <span class="state-share">19,080 (3.2%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Georgia</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-ga.png" alt="Georgia" class="state-flag">
+              <span class="state-name">Georgia</span>
+            </div>
             <span class="state-share">16,980 (2.8%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Virginia</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-va.png" alt="Virginia" class="state-flag">
+              <span class="state-name">Virginia</span>
+            </div>
             <span class="state-share">14,400 (2.4%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">North Carolina</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-nc.png" alt="North Carolina" class="state-flag">
+              <span class="state-name">North Carolina</span>
+            </div>
             <span class="state-share">13,140 (2.2%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Michigan</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-mi.png" alt="Michigan" class="state-flag">
+              <span class="state-name">Michigan</span>
+            </div>
             <span class="state-share">11,760 (2.0%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Ohio</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-oh.png" alt="Ohio" class="state-flag">
+              <span class="state-name">Ohio</span>
+            </div>
             <span class="state-share">11,160 (1.9%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Massachusetts</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-ma.png" alt="Massachusetts" class="state-flag">
+              <span class="state-name">Massachusetts</span>
+            </div>
             <span class="state-share">9,960 (1.7%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Maryland</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-md.png" alt="Maryland" class="state-flag">
+              <span class="state-name">Maryland</span>
+            </div>
             <span class="state-share">9,600 (1.6%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Arizona</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-az.png" alt="Arizona" class="state-flag">
+              <span class="state-name">Arizona</span>
+            </div>
             <span class="state-share">9,300 (1.6%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Washington</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-wa.png" alt="Washington" class="state-flag">
+              <span class="state-name">Washington</span>
+            </div>
             <span class="state-share">9,180 (1.5%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Colorado</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-co.png" alt="Colorado" class="state-flag">
+              <span class="state-name">Colorado</span>
+            </div>
             <span class="state-share">8,760 (1.5%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Nevada</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-nv.png" alt="Nevada" class="state-flag">
+              <span class="state-name">Nevada</span>
+            </div>
             <span class="state-share">8,400 (1.4%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Connecticut</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-ct.png" alt="Connecticut" class="state-flag">
+              <span class="state-name">Connecticut</span>
+            </div>
             <span class="state-share">7,440 (1.2%)</span>
           </div>
           <div class="state-item">
-            <span class="state-name">Tennessee</span>
+            <div class="state-name-wrapper">
+              <img src="https://flagcdn.com/w40/us-tn.png" alt="Tennessee" class="state-flag">
+              <span class="state-name">Tennessee</span>
+            </div>
             <span class="state-share">6,960 (1.2%)</span>
           </div>
         </div>
