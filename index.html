@@ -1757,27 +1757,6 @@
       transform: translateY(0);
     }
     
-    /* ============================================
-       CURSOR EFFECTS
-    ============================================ */
-    .cursor-glow {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201, 162, 39, 0.3) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: width 0.3s, height 0.3s;
-      display: none;
-    }
-    
-    @media (hover: hover) {
-      .cursor-glow {
-        display: block;
-      }
-    }
   </style>
 </head>
 <body>
@@ -1786,9 +1765,6 @@
   
   <!-- Floating Particles -->
   <div class="particles" id="particles"></div>
-  
-  <!-- Cursor Glow Effect -->
-  <div class="cursor-glow" id="cursorGlow"></div>
   
   <!-- ============================================
        HERO SECTION
@@ -2585,40 +2561,6 @@
       particle.style.animationDuration = (15 + Math.random() * 10) + 's';
       particlesContainer.appendChild(particle);
     }
-    
-    // ============================================
-    // CURSOR GLOW EFFECT
-    // ============================================
-    const cursorGlow = document.getElementById('cursorGlow');
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-    
-    function animateCursor() {
-      cursorX += (mouseX - cursorX) * 0.1;
-      cursorY += (mouseY - cursorY) * 0.1;
-      cursorGlow.style.left = cursorX + 'px';
-      cursorGlow.style.top = cursorY + 'px';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-    
-    // Enhance cursor on interactive elements
-    const interactiveElements = document.querySelectorAll('.bento-card, .metric-card, .delivery-card, .logo');
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursorGlow.style.width = '40px';
-        cursorGlow.style.height = '40px';
-      });
-      el.addEventListener('mouseleave', () => {
-        cursorGlow.style.width = '20px';
-        cursorGlow.style.height = '20px';
-      });
-    });
     
     // ============================================
     // SCROLL-TRIGGERED ANIMATIONS
