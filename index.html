@@ -1428,6 +1428,9 @@
       .geo-visual { max-width: 400px; margin: 0 auto; }
       .metrics-grid { grid-template-columns: repeat(2, 1fr); }
       .value-content { grid-template-columns: 1fr; }
+      .bento-featured[style*="grid-column"] > div[style*="grid-template-columns"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
     }
     
     @media (max-width: 768px) {
@@ -1441,11 +1444,18 @@
       .geo-table-header { grid-template-columns: 100px 70px 90px 1fr; }
       .us-states-grid { grid-template-columns: repeat(2, 1fr); }
       .banner-performance { grid-template-columns: 1fr; }
+      .bento-featured[style*="grid-column"] > div[style*="grid-template-columns"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: var(--space-md) !important;
+      }
     }
     
     @media (max-width: 480px) {
       .bento-small { grid-column: span 12; }
       .metrics-grid { grid-template-columns: 1fr; }
+      .bento-featured[style*="grid-column"] > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+      }
     }
     
     /* Print Styles */
@@ -1532,15 +1542,15 @@
       
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-value" data-value="255,000">255,000</div>
-          <div class="hero-stat-label">Paid Circulation</div>
+          <div class="hero-stat-value" data-value="2.9M+">2.9M+</div>
+          <div class="hero-stat-label">Total Brand Footprint</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-value" data-value="1.46M">1.46M</div>
-          <div class="hero-stat-label">Reach Per Issue</div>
+          <div class="hero-stat-label">Print Reach Per Issue</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-value" data-value="600K+">600K+</div>
+          <div class="hero-stat-value" data-value="600K">600K</div>
           <div class="hero-stat-label">Monthly Digital Visits</div>
         </div>
       </div>
@@ -1581,8 +1591,8 @@
               <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div class="stat-content">
-              <div class="stat-value">77%</div>
-              <div class="stat-label">Aged 35+</div>
+              <div class="stat-value">45</div>
+              <div class="stat-label">Median Age</div>
             </div>
           </div>
           <div class="bento-stat-card">
@@ -1590,8 +1600,8 @@
               <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </div>
             <div class="stat-content">
-              <div class="stat-value">60%</div>
-              <div class="stat-label">$100K+ HHI</div>
+              <div class="stat-value">$193K</div>
+              <div class="stat-label">Median HHI</div>
             </div>
           </div>
           <div class="bento-stat-card">
@@ -1599,7 +1609,7 @@
               <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
             <div class="stat-content">
-              <div class="stat-value">93%</div>
+              <div class="stat-value">97%</div>
               <div class="stat-label">College Educated</div>
             </div>
           </div>
@@ -1607,44 +1617,78 @@
         
         <!-- Reader Profile Card -->
         <div class="bento-card bento-wide">
-          <div class="card-label">Reader Profile</div>
-          <h3 class="card-title">Decision-Makers & Tastemakers</h3>
+          <div class="card-label">Print Audience Profile</div>
+          <h3 class="card-title">Affluent Decision-Makers</h3>
           <div class="profile-list">
             <div class="profile-item">
               <span class="profile-bullet">◆</span>
-              <span><span class="profile-category">Seniority:</span> VP, Director, Owner & Board-level representation across industries</span>
+              <span><span class="profile-category">Demographics:</span> 87% male, 13% female | Median age 45 | 67% aged 25-54</span>
             </div>
             <div class="profile-item">
               <span class="profile-bullet">◆</span>
-              <span><span class="profile-category">Functions:</span> Operations, General Management, IT, Finance, and Sales leadership</span>
+              <span><span class="profile-category">Wealth:</span> Median HHI $193,039 | Median Net Worth $1.4MM | 97% college educated</span>
             </div>
             <div class="profile-item">
               <span class="profile-bullet">◆</span>
-              <span><span class="profile-category">Lifestyle:</span> Luxury automotive enthusiasts, fine dining patrons, premium travel, and golf</span>
+              <span><span class="profile-category">Professional:</span> 83% professional/managerial | VP, Director, Owner & Board-level representation</span>
             </div>
             <div class="profile-item">
               <span class="profile-bullet">◆</span>
-              <span><span class="profile-category">Home:</span> Home theater connoisseurs with elevated at-home entertainment experiences</span>
+              <span><span class="profile-category">Luxury Spending:</span> $120B total yearly luxury expenditures across all categories</span>
             </div>
           </div>
         </div>
         
-        <!-- Lifestyle Cards -->
+        <!-- Digital Audience Card -->
         <div class="bento-card bento-wide">
-          <div class="card-label">Lifestyle Affinity</div>
-          <h3 class="card-title">Premium Lifestyle Alignment</h3>
+          <div class="card-label">Digital Audience Profile</div>
+          <h3 class="card-title">Ultra-High Net Worth Digital Users</h3>
           <div class="profile-list">
             <div class="profile-item">
               <span class="profile-bullet">◆</span>
-              <span><span class="profile-category">Spirits & Dining:</span> Strong over-index in premium beverages, fine dining, and entertaining</span>
+              <span><span class="profile-category">Average Age:</span> 46 years old</span>
             </div>
             <div class="profile-item">
               <span class="profile-bullet">◆</span>
-              <span><span class="profile-category">Automotive:</span> High concentration in luxury vehicle ownership and premium service</span>
+              <span><span class="profile-category">Average HHI:</span> $606,000 (3x higher than print median)</span>
             </div>
             <div class="profile-item">
               <span class="profile-bullet">◆</span>
-              <span><span class="profile-category">Travel:</span> Heavy engagement with luxury hotels and destination experiences</span>
+              <span><span class="profile-category">Average Net Worth:</span> $3.1MM (2.2x higher than print median)</span>
+            </div>
+            <div class="profile-item">
+              <span class="profile-bullet">◆</span>
+              <span><span class="profile-category">Education:</span> 96% college educated</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Total Brand Footprint Card -->
+        <div class="bento-card bento-featured" style="grid-column: span 12; min-height: 200px;">
+          <div class="featured-header">
+            <div class="featured-label">Total Brand Footprint</div>
+            <h3 class="featured-title">Reaching 2.9+ Million Affluent Consumers</h3>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-lg); margin-top: var(--space-lg);">
+            <div style="text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--gold-500); line-height: 1;">1.46M</div>
+              <div style="font-size: 0.7rem; color: var(--white-50); margin-top: var(--space-xs); letter-spacing: 0.1em; text-transform: uppercase;">Print Readers</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--gold-500); line-height: 1;">600K</div>
+              <div style="font-size: 0.7rem; color: var(--white-50); margin-top: var(--space-xs); letter-spacing: 0.1em; text-transform: uppercase;">Digital Viewers</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--gold-500); line-height: 1;">710K</div>
+              <div style="font-size: 0.7rem; color: var(--white-50); margin-top: var(--space-xs); letter-spacing: 0.1em; text-transform: uppercase;">Social Followers</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--gold-500); line-height: 1;">155K</div>
+              <div style="font-size: 0.7rem; color: var(--white-50); margin-top: var(--space-xs); letter-spacing: 0.1em; text-transform: uppercase;">Newsletter Subscribers</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--gold-500); line-height: 1;">7K+</div>
+              <div style="font-size: 0.7rem; color: var(--white-50); margin-top: var(--space-xs); letter-spacing: 0.1em; text-transform: uppercase;">Event Attendees</div>
             </div>
           </div>
         </div>
@@ -2044,8 +2088,8 @@
           const statValues = entry.target.querySelectorAll('.hero-stat-value');
           statValues.forEach(stat => {
             const text = stat.textContent;
-            if (text.includes('255,000')) {
-              animateValue(stat, 0, 255000, 2000);
+            if (text.includes('2.9M')) {
+              animateValue(stat, 0, 2900000, 2000);
             } else if (text.includes('1.46M')) {
               animateValue(stat, 0, 1460000, 2000);
             } else if (text.includes('600K')) {
