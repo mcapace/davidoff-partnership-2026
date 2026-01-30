@@ -611,36 +611,19 @@
     }
     
     .bento-card {
-      background: var(--charcoal);
-      border: 1px solid var(--white-08);
-      border-radius: 16px;
-      padding: var(--space-2xl);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--white-08);
+      border-radius: 0;
+      padding: var(--space-2xl) 0;
       position: relative;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
       opacity: 0;
       animation: fadeInUp 0.8s ease-out forwards;
     }
     
-    .bento-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
-    
     .bento-card:hover {
-      border-color: var(--white-15);
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.2);
-    }
-    
-    .bento-card:hover::before {
-      opacity: 1;
+      border-bottom-color: var(--cigar-accent);
     }
     
     .bento-card:nth-child(1) { animation-delay: 0.1s; }
@@ -667,7 +650,7 @@
       flex-direction: column;
       justify-content: space-between;
       min-height: 350px;
-      background: linear-gradient(135deg, var(--smoke) 0%, var(--charcoal) 100%);
+      background: transparent;
     }
     
     .bento-stats {
@@ -681,36 +664,36 @@
       display: flex;
       align-items: center;
       gap: var(--space-lg);
-      padding: var(--space-lg);
-      background: var(--smoke);
-      border: 1px solid var(--white-08);
-      border-radius: 2px;
-      transition: all 0.4s ease;
+      padding: var(--space-lg) 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--white-08);
+      transition: all 0.3s ease;
     }
     
     .bento-stat-card:hover {
-      border-color: var(--white-15);
-      background: var(--ash);
+      border-bottom-color: var(--cigar-accent);
+    }
+    
+    .bento-stat-card:last-child {
+      border-bottom: none;
     }
     
     .stat-icon {
-      width: 56px;
-      height: 56px;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--smoke);
-      border: 1px solid var(--white-12);
-      border-radius: 12px;
+      background: transparent;
+      border: none;
       flex-shrink: 0;
       position: relative;
       transition: all 0.3s ease;
     }
     
     .bento-stat-card:hover .stat-icon {
-      transform: translateY(-2px);
-      border-color: var(--accent-primary);
-      background: var(--ash);
+      transform: scale(1.1);
     }
     
     .stat-icon svg {
@@ -1114,8 +1097,9 @@
     .us-states-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-sm);
+      gap: 0;
       margin-top: var(--space-lg);
+      border-top: 1px solid var(--white-08);
     }
     
     .state-item {
@@ -1204,36 +1188,32 @@
     }
     
     .banner-card {
-      background: var(--charcoal);
-      border: 1px solid var(--white-08);
-      border-radius: 16px;
-      padding: var(--space-xl);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--white-08);
+      border-radius: 0;
+      padding: var(--space-xl) 0;
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.3s ease;
     }
     
-    .banner-card::before {
+    .banner-card::after {
       content: '';
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
-      right: 0;
+      width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-      opacity: 0;
-      transition: opacity 0.4s ease;
+      background: var(--cigar-accent);
+      transition: width 0.3s ease;
     }
     
-    .banner-card:hover::before {
-      opacity: 1;
+    .banner-card:hover::after {
+      width: 60px;
     }
     
     .banner-card:hover {
-      border-color: var(--white-15);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      border-bottom-color: var(--cigar-accent);
     }
     
     .banner-label {
@@ -1470,23 +1450,20 @@
     }
     
     .feature-icon {
-      width: 44px;
-      height: 44px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--smoke);
-      border: 1px solid var(--white-12);
-      border-radius: 10px;
+      background: transparent;
+      border: none;
       flex-shrink: 0;
       position: relative;
       transition: all 0.3s ease;
     }
     
     .value-feature:hover .feature-icon {
-      transform: translateY(-2px);
-      border-color: var(--accent-primary);
-      background: var(--ash);
+      transform: scale(1.1);
     }
     
     .feature-icon svg {
@@ -1513,35 +1490,32 @@
     }
     
     .delivery-card {
-      background: var(--charcoal);
-      border: 1px solid var(--white-08);
-      border-radius: 16px;
-      padding: var(--space-xl);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--white-08);
+      border-radius: 0;
+      padding: var(--space-xl) 0;
+      transition: all 0.3s ease;
       position: relative;
-      overflow: hidden;
     }
     
-    .delivery-card::before {
+    .delivery-card::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.08), transparent);
-      transition: left 0.6s ease;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--cigar-accent);
+      transition: width 0.3s ease;
     }
     
     .delivery-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-      border-color: var(--white-15);
+      border-bottom-color: var(--cigar-accent);
     }
     
-    .delivery-card:hover::before {
-      left: 100%;
+    .delivery-card:hover::after {
+      width: 60px;
     }
     
     .delivery-header {
