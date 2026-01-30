@@ -13,16 +13,16 @@
   <style>
     :root {
       /* Light Refined Palette */
-      --void: #5a5a5a;
-      --obsidian: #666666;
-      --charcoal: #6a6a6a;
-      --smoke: #707070;
-      --ash: #767676;
+      --void: #7a7a7a;
+      --obsidian: #808080;
+      --charcoal: #858585;
+      --smoke: #8a8a8a;
+      --ash: #909090;
       
-      /* Cigar Accent Color - Lighter for readability */
-      --cigar-accent: #c97a4a;
-      --cigar-accent-light: #d99a6a;
-      --cigar-accent-dark: #b85a2a;
+      /* Cigar Accent Color - Much lighter for readability */
+      --cigar-accent: #e5a87a;
+      --cigar-accent-light: #f0b894;
+      --cigar-accent-dark: #d9985a;
       
       /* Modern Accent Colors */
       --accent-primary: #3b82f6;
@@ -1594,17 +1594,18 @@
       max-width: 150px;
       object-fit: contain;
       opacity: 1;
-      filter: none;
+      filter: brightness(0) invert(1);
       transition: opacity 0.3s ease;
     }
     
     .footer-logo-img:hover {
-      opacity: 0.8;
+      opacity: 0.9;
     }
     
     .footer-logo-davidoff {
       height: 40px;
       max-width: 150px;
+      filter: brightness(0) invert(1);
     }
     
     .footer-logo-divider {
