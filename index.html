@@ -12,12 +12,12 @@
   
   <style>
     :root {
-      /* Modern Dark Palette */
-      --void: #0a0a0a;
-      --obsidian: #111111;
-      --charcoal: #1a1a1a;
-      --smoke: #222222;
-      --ash: #2a2a2a;
+      /* Modern Dark Palette - Lightened */
+      --void: #1a1a1a;
+      --obsidian: #222222;
+      --charcoal: #2a2a2a;
+      --smoke: #333333;
+      --ash: #3a3a3a;
       
       /* Modern Accent Colors */
       --accent-primary: #3b82f6;
@@ -846,45 +846,92 @@
       width: 100%;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: 
-        radial-gradient(circle at 30% 30%, var(--gold-700) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, var(--copper-600) 0%, transparent 40%),
-        linear-gradient(135deg, var(--charcoal) 0%, var(--void) 100%);
-      border: 1px solid var(--gold-800);
+      background: var(--charcoal);
+      border: 2px solid var(--white-15);
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
     .geo-globe::before {
       content: '';
       position: absolute;
-      inset: 10%;
+      inset: 15%;
       border-radius: 50%;
       border: 1px solid var(--white-08);
     }
     
-    .geo-globe::after {
-      content: '';
+    .geo-chart {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .geo-chart-segment {
       position: absolute;
-      inset: 25%;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      border: 1px dashed var(--white-04);
+      clip-path: polygon(50% 50%, 50% 0%, var(--end-x) var(--end-y), 50% 50%);
+      background: conic-gradient(
+        from 0deg,
+        var(--accent-primary) 0deg 242.64deg,
+        var(--accent-secondary) 242.64deg 248.4deg,
+        var(--accent-tertiary) 248.4deg 252deg,
+        var(--white-15) 252deg 360deg
+      );
+    }
+    
+    .geo-chart-center {
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      background: var(--void);
+      border: 2px solid var(--white-12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    
+    .geo-chart-center-value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    
+    .geo-chart-center-label {
+      font-size: 0.7rem;
+      color: var(--white-50);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: var(--space-xs);
     }
     
     .geo-us-highlight {
       position: absolute;
-      top: 30%;
-      left: 20%;
-      width: 25%;
-      height: 20%;
+      top: 25%;
+      left: 15%;
+      width: 30%;
+      height: 25%;
       background: radial-gradient(ellipse, var(--accent-primary) 0%, transparent 70%);
-      opacity: 0.4;
+      opacity: 0.3;
       animation: pulseGlow 3s ease-in-out infinite;
+      border-radius: 50%;
     }
     
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.1); }
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.05); }
     }
     
     .geo-data {
@@ -911,7 +958,7 @@
     }
     
     .geo-row-detailed:hover {
-      background: rgba(201, 162, 39, 0.03);
+      background: var(--smoke);
       padding-left: var(--space-sm);
     }
     
@@ -1952,6 +1999,13 @@
       <div class="geo-content">
         <div class="geo-visual">
           <div class="geo-globe">
+            <div class="geo-chart">
+              <div class="geo-chart-segment"></div>
+              <div class="geo-chart-center">
+                <div class="geo-chart-center-value">67.4%</div>
+                <div class="geo-chart-center-label">U.S. Traffic</div>
+              </div>
+            </div>
             <div class="geo-us-highlight"></div>
           </div>
         </div>
