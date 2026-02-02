@@ -873,14 +873,19 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-2xl);
-      align-items: start;
+      align-items: stretch;
     }
     .segmentation-panel {
+      display: flex;
+      flex-direction: column;
       padding: var(--space-xl);
       background: var(--charcoal);
       border: 1px solid var(--white-08);
       border-radius: 8px;
       border-left: 4px solid var(--cigar-accent);
+    }
+    .segmentation-panel .age-brackets {
+      flex: 1;
     }
     .segmentation-panel.digital-panel {
       border-left-color: var(--accent-primary);
