@@ -14,9 +14,9 @@ This interactive presentation is designed for a 30-minute meeting with Davidoff'
 - **Cinematic Hero Section** - Full-screen background with the Davidoff cigar image, slow zoom animation, and layered gradients
 - **Partnership Branding** - Both Cigar Aficionado and Davidoff logos prominently featured
 - **Key Statistics** - 255,000 paid circulation, 1.46M reach per issue, 600K+ monthly digital visits
-- **Audience Profile** - Detailed demographics (77% aged 35+, 60% $100K+ HHI, 93% college educated)
-- **Geographic Breakdown** - Visual bar charts showing traffic by market (64.4% US-based)
-- **Digital Metrics** - Engagement data including page views, unique visitors, and session duration
+- **Audience Profile** - Age segmentation by bracket (18-35, 35-45, 45-55, 55-65, 65+), 93% college educated
+- **Geographic Breakdown** - Traffic by market (64.44% U.S.), country totals rounded to nearest thousand
+- **Digital Metrics** - Page views, unique visitors, 1:21 avg. visit duration
 - **Partnership Value** - Print, digital, and native content delivery options
 
 ## 🎨 Design
@@ -65,8 +65,8 @@ davidoff-partnership-2026/
 | Page Views/Month | 1M+ |
 | Unique Visitors | 310K |
 | Pages Per Visit | 3.24 |
-| Avg. Session Duration | 1:21 |
-| US Traffic Share | 64.4% |
+| Avg. Visit Duration | 1:21 |
+| US Traffic Share | 64.44% |
 
 ## 🏢 About
 
