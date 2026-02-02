@@ -861,6 +861,55 @@
       text-align: right;
     }
     
+    /* Print & Digital Audience Segmentation */
+    .segmentation-block {
+      padding-top: var(--space-xl);
+      padding-bottom: var(--space-2xl);
+    }
+    .segmentation-header {
+      margin-bottom: var(--space-xl);
+    }
+    .segmentation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: start;
+    }
+    .segmentation-panel {
+      padding: var(--space-xl);
+      background: var(--charcoal);
+      border: 1px solid var(--white-08);
+      border-radius: 8px;
+      border-left: 4px solid var(--cigar-accent);
+    }
+    .segmentation-panel.digital-panel {
+      border-left-color: var(--accent-primary);
+    }
+    .segmentation-panel-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: var(--space-xs);
+    }
+    .segmentation-panel-source {
+      font-size: 0.7rem;
+      color: var(--white-50);
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-lg);
+    }
+    .segmentation-summary {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cigar-accent);
+      margin-top: var(--space-lg);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--white-08);
+    }
+    .segmentation-panel.digital-panel .segmentation-summary {
+      color: var(--accent-primary);
+    }
+    
     /* ============================================
        GEOGRAPHY SECTION
     ============================================ */
@@ -1757,6 +1806,7 @@
         grid-template-columns: repeat(2, 1fr) !important;
         gap: var(--space-md) !important;
       }
+      .segmentation-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
       .section { padding: var(--space-xl) var(--space-md); }
       .section-header { margin-bottom: var(--space-xl); }
       .footer-content { flex-direction: column; gap: var(--space-lg); text-align: center; }
@@ -2029,10 +2079,6 @@
             </div>
             <div class="profile-item">
               <span class="profile-bullet">◆</span>
-              <span><span class="profile-category">Age segmentation:</span> 21–35 | 35–45 | 45–55 | 55–65 | 65+</span>
-            </div>
-            <div class="profile-item">
-              <span class="profile-bullet">◆</span>
               <span><span class="profile-category">Wealth:</span> Median HHI $193,039 | Median Net Worth $1.4MM | 93% college educated</span>
             </div>
             <div class="profile-item">
@@ -2070,45 +2116,82 @@
           </div>
         </div>
         
-        <!-- Age segmentation by bracket (per client request) -->
-        <div class="bento-card bento-wide">
-          <div class="card-label">Age segmentation</div>
-          <h3 class="card-title">Audience by age bracket</h3>
-          <div class="age-brackets">
-            <div class="age-bracket-row">
-              <span class="age-bracket-label">21–35</span>
-              <div class="age-bracket-track">
-                <div class="age-bracket-fill" style="width: 24%"></div>
+        <!-- Print & Digital Audience Segmentation (side-by-side) -->
+        <div class="bento-card segmentation-block" style="grid-column: span 12;">
+          <div class="segmentation-header">
+            <div class="card-label">Audience Segmentation</div>
+            <h3 class="card-title">Print & Digital Age Breakdown</h3>
+          </div>
+          <div class="segmentation-grid">
+            <div class="segmentation-panel print-panel">
+              <div class="segmentation-panel-title">Print audience</div>
+              <div class="segmentation-panel-source">Reader Survey, Dec 2025</div>
+              <div class="age-brackets">
+                <div class="age-bracket-row">
+                  <span class="age-bracket-label">21–44</span>
+                  <div class="age-bracket-track">
+                    <div class="age-bracket-fill" style="width: 18%"></div>
+                  </div>
+                  <span class="age-bracket-pct">18%</span>
+                </div>
+                <div class="age-bracket-row">
+                  <span class="age-bracket-label">45–54</span>
+                  <div class="age-bracket-track">
+                    <div class="age-bracket-fill" style="width: 42%"></div>
+                  </div>
+                  <span class="age-bracket-pct">42%</span>
+                </div>
+                <div class="age-bracket-row">
+                  <span class="age-bracket-label">55+</span>
+                  <div class="age-bracket-track">
+                    <div class="age-bracket-fill" style="width: 40%"></div>
+                  </div>
+                  <span class="age-bracket-pct">40%</span>
+                </div>
               </div>
-              <span class="age-bracket-pct">24%</span>
+              <div class="segmentation-summary">82% age 45+</div>
             </div>
-            <div class="age-bracket-row">
-              <span class="age-bracket-label">35–45</span>
-              <div class="age-bracket-track">
-                <div class="age-bracket-fill" style="width: 25%"></div>
+            <div class="segmentation-panel digital-panel">
+              <div class="segmentation-panel-title">Digital audience</div>
+              <div class="segmentation-panel-source">Site analytics</div>
+              <div class="age-brackets">
+                <div class="age-bracket-row">
+                  <span class="age-bracket-label">21–35</span>
+                  <div class="age-bracket-track">
+                    <div class="age-bracket-fill" style="width: 24%"></div>
+                  </div>
+                  <span class="age-bracket-pct">24%</span>
+                </div>
+                <div class="age-bracket-row">
+                  <span class="age-bracket-label">35–45</span>
+                  <div class="age-bracket-track">
+                    <div class="age-bracket-fill" style="width: 25%"></div>
+                  </div>
+                  <span class="age-bracket-pct">25%</span>
+                </div>
+                <div class="age-bracket-row">
+                  <span class="age-bracket-label">45–55</span>
+                  <div class="age-bracket-track">
+                    <div class="age-bracket-fill" style="width: 25%"></div>
+                  </div>
+                  <span class="age-bracket-pct">25%</span>
+                </div>
+                <div class="age-bracket-row">
+                  <span class="age-bracket-label">55–65</span>
+                  <div class="age-bracket-track">
+                    <div class="age-bracket-fill" style="width: 16%"></div>
+                  </div>
+                  <span class="age-bracket-pct">16%</span>
+                </div>
+                <div class="age-bracket-row">
+                  <span class="age-bracket-label">65+</span>
+                  <div class="age-bracket-track">
+                    <div class="age-bracket-fill" style="width: 10%"></div>
+                  </div>
+                  <span class="age-bracket-pct">10%</span>
+                </div>
               </div>
-              <span class="age-bracket-pct">25%</span>
-            </div>
-            <div class="age-bracket-row">
-              <span class="age-bracket-label">45–55</span>
-              <div class="age-bracket-track">
-                <div class="age-bracket-fill" style="width: 25%"></div>
-              </div>
-              <span class="age-bracket-pct">25%</span>
-            </div>
-            <div class="age-bracket-row">
-              <span class="age-bracket-label">55–65</span>
-              <div class="age-bracket-track">
-                <div class="age-bracket-fill" style="width: 16%"></div>
-              </div>
-              <span class="age-bracket-pct">16%</span>
-            </div>
-            <div class="age-bracket-row">
-              <span class="age-bracket-label">65+</span>
-              <div class="age-bracket-track">
-                <div class="age-bracket-fill" style="width: 10%"></div>
-              </div>
-              <span class="age-bracket-pct">10%</span>
+              <div class="segmentation-summary">51% age 45+</div>
             </div>
           </div>
         </div>
