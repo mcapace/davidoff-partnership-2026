@@ -14,7 +14,7 @@ This interactive presentation is designed for a 30-minute meeting with Davidoff'
 - **Cinematic Hero Section** - Full-screen background with the Davidoff cigar image, slow zoom animation, and layered gradients
 - **Partnership Branding** - Both Cigar Aficionado and Davidoff logos prominently featured
 - **Key Statistics** - 255,000 paid circulation, 1.46M reach per issue, 600K+ monthly digital visits
-- **Audience Profile** - Age segmentation by bracket (18-35, 35-45, 45-55, 55-65, 65+), 93% college educated
+- **Audience Profile** - Age segmentation by bracket (21-35, 35-45, 45-55, 55-65, 65+), 93% college educated
 - **Geographic Breakdown** - Traffic by market (64.44% U.S.), country totals rounded to nearest thousand
 - **Digital Metrics** - Page views, unique visitors, 1:21 avg. visit duration
 - **Partnership Value** - Print, digital, and native content delivery options
